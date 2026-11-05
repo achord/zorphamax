@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zorphamax: Coming Soon</title>
+    <meta
+      name="description"
+      content="Zorphamax: the future home of an ongoing design experiment. Coming soon."
+    />
+    <link
+      rel="preload"
+      href="type/zvf.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: 'ZVF';
+        src:
+          url('type/zvf.woff2') format('woff2-variations'),
+          url('type/zvf.woff2') format('woff2');
+        font-weight: 100 900;
+        font-display: swap;
+      }
+
+      :root {
+        --bg: #000;
+        --fg: #fff;
+        --muted: rgba(255, 255, 255, 0.55);
+        --gutter: clamp(16px, 4vw, 48px);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'ZVF', system-ui, sans-serif;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        padding: var(--gutter);
+      }
+
+      header,
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.04em;
+      }
+
+      .mark {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .status {
+        color: var(--muted);
+      }
+
+      main {
+        align-self: center;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(2rem, 6vw, 6rem);
+        padding-block: 6vh;
+        padding-inline: clamp(0rem, 8vw, 8rem);
+        max-width: 1280px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      figure {
+        justify-self: end;
+        width: 100%;
+        max-width: 380px;
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      @media (max-width: 760px) {
+        main {
+          grid-template-columns: minmax(0, 1fr);
+          padding-inline: 0;
+        }
+        figure {
+          order: -1;
+          justify-self: start;
+          max-width: 260px;
+        }
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 5vw, 4rem);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+      }
+
+      .intro {
+        margin-top: 1.25rem;
+        max-width: 30rem;
+        font-size: 1.0625rem;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+      .intro strong {
+        color: var(--fg);
+        font-weight: 500;
+      }
+
+      a {
+        color: var(--fg);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        padding-bottom: 2px;
+        transition:
+          border-color 0.2s,
+          font-weight 0.3s;
+      }
+      a:hover,
+      a:focus-visible {
+        border-color: var(--fg);
+        font-weight: 600;
+      }
+      a:focus-visible {
+        outline: 1px solid var(--fg);
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <main>
+        <div>
+          <h1>Something’s<br />taking shape.</h1>
+          <p class="intro">
+            This will be the home of <strong>Zorphamax</strong>, an open-ended
+            design experiment in line, form, and type. Work in progress, made in
+            public.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="img/grid-lines.png"
+            width="1080"
+            height="1080"
+            alt="A six-by-six grid of white, angular line drawings on black."
+          />
+        </figure>
+      </main>
+
+      <footer>
+        <a href="https://instagram.com/zorphamax" target="_blank" rel="noopener"
+          >Instagram @zorphamax</a
+        >
+        <span class="status">zorphamax.art</span>
+      </footer>
+    </div>
+  </body>
+</html>
